@@ -75,17 +75,31 @@ body {
 .navigation ul li {
     list-style: none;
     margin: 1rem;
+    flex: 1;
 }
 
 .navigation a {
-    font-size: 120%;
+    display: block;
+    text-align: center;
+    font-size: 130%;
     font-weight: bold;
     color: rgb(4, 66, 100);
-    background: rgb(65,106,125);
-    background: radial-gradient(circle, rgba(65,106,125,1) 0%, rgba(141,190,204,1) 51%, rgba(255,255,255,1) 100%);
     border-radius: 1rem; 
-    padding: 1rem;
+    background: rgb(0,93,116);
+    background: linear-gradient(0deg, rgba(0,93,116,1) 0%, rgba(114,185,246,1) 50%, rgba(0,93,116,1) 100%); 
+    padding: 0.5rem;
     text-decoration: none;
+    box-shadow: 3px 3px 5px rgba(0, 13, 85, 0.801);
+}
+
+.navigation a.aktuell {
+    text-decoration: underline;
+    color: white;
+    box-shadow: none;
+}
+
+.navigation a:hover {
+    box-shadow: none;
 }
 
 main {
@@ -126,4 +140,39 @@ main {
 img {
     max-width: 100%;
     height: auto;
+}
+
+main.lueneburg {
+    background-image: url("../img/lueneburgerheidebg.jpeg");
+    min-height: 100vh;
+}
+
+main.balaton {
+    background-image: url("../img/balatonbg.jpg");
+    min-height: 100vh;
+}
+
+main.contact {
+    background-image: url("../img/mainbg.jpg");
+    min-height: 100vh;
+}
+
+div.heideContent {
+    display: flex;
+}
+
+div.balatonContent {
+    display: flex;
+}
+
+@media screen and (max-width: 450px) {
+
+    .mainContent {
+        display: block;
+        max-width: 100%;
+    }
+
+    .navigation ul li {
+        flex: 0 0 90%;
+    }
 }
