@@ -1,0 +1,129 @@
+body {
+    border: 5px double rgb(155, 155, 155);
+    margin: 0 4rem;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 2fr 0.5fr auto 0.5fr;
+    grid-template-areas: 
+    "banner"
+    "navigation"
+    "mainContent"
+    "footerContent";
+}
+/*Grid Position*/
+.pagebanner {
+    grid-area: banner;
+}
+.navigation {
+    grid-area: navigation;
+}
+.mainContent {
+    grid-area: mainContent;
+}
+.footer {
+    grid-area: footerContent;
+}
+
+/*Styling*/
+
+.pagebanner {
+    background-image: url(../img/headerbanner.jpg);
+    min-height: 50vh;
+    background-position: center;
+    background-size: cover;
+}
+
+.pagebanner .text {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.pagebanner span {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    font-size: 300%;
+    font-weight: bold;
+    font-family: 'Caveat Brush', cursive;
+}
+
+.footer {
+    display: grid;
+    align-content: center;
+    background: linear-gradient(0deg, rgba(33,124,168,1) 0%, rgba(0,21,138,1) 51%, rgba(33,124,168,1) 100%); 
+    padding: 0 1rem;
+    border-top: 5px double rgb(155, 155, 155);
+}
+
+.navigation {
+    display: grid;
+    align-content: center;
+    background: rgb(33,124,168);
+    background: linear-gradient(0deg, rgba(33,124,168,1) 0%, rgba(0,21,138,1) 51%, rgba(33,124,168,1) 100%); 
+    border-top: 5px double rgb(155, 155, 155);
+    border-bottom: 5px double rgb(155, 155, 155);
+}
+
+.navigation ul {
+    display: flex;
+    padding: 0;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.navigation ul li {
+    list-style: none;
+    margin: 1rem;
+}
+
+.navigation a {
+    font-size: 120%;
+    font-weight: bold;
+    color: rgb(4, 66, 100);
+    background: rgb(65,106,125);
+    background: radial-gradient(circle, rgba(65,106,125,1) 0%, rgba(141,190,204,1) 51%, rgba(255,255,255,1) 100%);
+    border-radius: 1rem; 
+    padding: 1rem;
+    text-decoration: none;
+}
+
+main {
+    background-image: url(../img/mainbg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-blend-mode: overlay;
+    background-color: rgb(174, 224, 247);
+}
+
+.mainContent {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-auto-rows: minmax(240px, auto);
+    grid-auto-flow: dense;
+}
+
+.mainContent div {
+    background-color: rgba(255, 255, 255, 0.25);
+    border-radius: 2rem;
+    box-shadow: 3px 3px 5px rgb(65,106,125);
+    margin: 1rem;
+    overflow: hidden;
+}
+
+.mainContent .des1-2 {
+    grid-column: span 1;
+    grid-row: span 2;
+}
+.mainContent .des2-1 {
+    grid-column: span 2;
+    grid-row: span 1;
+}
+.mainContent .des1-1 {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
