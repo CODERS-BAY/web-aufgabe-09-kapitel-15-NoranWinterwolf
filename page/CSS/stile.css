@@ -1,4 +1,6 @@
 body {
+    font-size: 110%;
+    line-height: 1.4rem;
     border: 5px double rgb(155, 155, 155);
     margin: 0 4rem;
     display: grid;
@@ -23,23 +25,19 @@ body {
 .footer {
     grid-area: footerContent;
 }
-
 /*Styling*/
-
 .pagebanner {
     background-image: url(../img/headerbanner.jpg);
     min-height: 50vh;
     background-position: center;
     background-size: cover;
 }
-
 .pagebanner .text {
     position: relative;
-    top: 50%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%);
 }
-
 .pagebanner span {
     position: absolute;
     left: 50%;
@@ -47,8 +45,8 @@ body {
     font-size: 300%;
     font-weight: bold;
     font-family: 'Caveat Brush', cursive;
+    text-align: center;
 }
-
 .footer {
     display: grid;
     align-content: center;
@@ -56,7 +54,6 @@ body {
     padding: 0 1rem;
     border-top: 5px double rgb(155, 155, 155);
 }
-
 .navigation {
     display: grid;
     align-content: center;
@@ -65,7 +62,6 @@ body {
     border-top: 5px double rgb(155, 155, 155);
     border-bottom: 5px double rgb(155, 155, 155);
 }
-
 .navigation ul {
     display: flex;
     padding: 0;
@@ -77,7 +73,6 @@ body {
     margin: 1rem;
     flex: 1;
 }
-
 .navigation a {
     display: block;
     text-align: center;
@@ -91,17 +86,14 @@ body {
     text-decoration: none;
     box-shadow: 3px 3px 5px rgba(0, 13, 85, 0.801);
 }
-
 .navigation a.aktuell {
     text-decoration: underline;
     color: white;
     box-shadow: none;
 }
-
 .navigation a:hover {
     box-shadow: none;
 }
-
 main {
     background-image: url(../img/mainbg.jpg);
     background-size: cover;
@@ -109,14 +101,12 @@ main {
     background-blend-mode: overlay;
     background-color: rgb(174, 224, 247);
 }
-
 .mainContent {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    grid-auto-rows: minmax(240px, auto);
+    grid-auto-rows: minmax(240px, 240px);
     grid-auto-flow: dense;
 }
-
 .mainContent div {
     background-color: rgba(255, 255, 255, 0.25);
     border-radius: 2rem;
@@ -124,7 +114,6 @@ main {
     margin: 1rem;
     overflow: hidden;
 }
-
 .mainContent .des1-2 {
     grid-column: span 1;
     grid-row: span 2;
@@ -137,41 +126,58 @@ main {
     grid-column: span 1;
     grid-row: span 1;
 }
-img {
-    max-width: 100%;
-    height: auto;
+.mainContent img {
+    min-height: 110%; 
+    min-width: auto;
+    position: relative;
+    bottom: 10%;
+    transition: all, 20s;
+    transform-origin: center center;
 }
-
+.mainContent img:hover {
+    transform: scale(150%);
+}
 main.lueneburg {
     background-image: url("../img/lueneburgerheidebg.jpeg");
     min-height: 100vh;
 }
-
 main.balaton {
     background-image: url("../img/balatonbg.jpg");
     min-height: 100vh;
 }
-
 main.contact {
     background-image: url("../img/mainbg.jpg");
     min-height: 100vh;
 }
-
-div.heideContent {
+div.heideContent, div.balatonContent, div.contactContent {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
-
-div.balatonContent {
-    display: flex;
+.heideContent article, .balatonContent article, .contactContent article {
+    max-width: 40%;
+    min-width: 20%;
+    height: auto;
+    margin: 2rem;
+    font-weight: bold;
 }
-
+.contactContent article {
+    max-width: 80%;
+}
+.heideContent img, .balatonContent img {
+    max-width: 40%;
+    height: auto;
+    margin: 2rem;
+}
 @media screen and (max-width: 450px) {
-
+    body {
+        margin: 0;
+    }
     .mainContent {
         display: block;
         max-width: 100%;
     }
-
     .navigation ul li {
         flex: 0 0 90%;
     }
