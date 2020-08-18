@@ -36,6 +36,28 @@
                 <p>Bei Fragen und Anregungen können Sie mich gerne Kontaktieren.</p>
             </article>
         </div>
+        <div class="formContent">
+            <fieldset>
+                <legend>Kontakt</legend>
+                <form action="ausgabe.html" method="get">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" required>
+                    <label for="reason">Grund des Kontakts:</label>
+                    <select name="reason" id="reason">
+                        <option value="feedback">Kritik und Lob</option>
+                        <option value="error">Fehlerbehebung</option>
+                        <option value="other">Sonstiges</option>
+                    </select>
+                    <label for="message">Nachricht:</label>
+                    <textarea name="message" id="message" cols="30" rows="10" required></textarea>
+                    <label for="answer">Wünschen Sie Antwort?</label>
+                    <input type="checkbox" name="answer" id="answer">
+                    <label for="email">Ihre E-Mail Adresse (für Antwort):</label>
+                    <input type="email" name="email" id="email">
+                    <input type="submit" value="Senden" id="send">
+                </form>
+            </fieldset>
+        </div>
         </main>
         <footer class="footer">
             <p>&copy; 2020 Matthias Schiffmann</p>
